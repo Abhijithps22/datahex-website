@@ -1,38 +1,400 @@
-.App {
-  text-align: center;
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap&family=sen&family=PT+Serif&family=Merriweather");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&family=Zilla+Slab&display=swap&family=Libre+Baskerville&family=Tilt+Prism");
+/* colors */
+:root {
+  --blue: #5e72e4;
+  --indigo: #6610f2;
+  --purple: #7d49eb;
+  --pink: #e83e8c;
+  --red: #ee3232;
+  --orange: #ff9900;
+  --yellow: #fffa6f;
+  --green: #297f00;
+  --teal: #39c097;
+  --cyan: #3065d0;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #dd2f6e;
+  --secondary: #392540;
+  --success: #22c4a6;
+  --info: #2f4cdd;
+  --warning: #ffb800;
+  --danger: #f35757;
+  --light: #f4f4f4;
+  --dark: #0d0e10;
+
+  /* links */
+  --facebook: #3b5998;
+  --twitter: #1da1f2;
+  --instagram: #c32aa3;
+  --linkedin: #007bb6;
+  --whatsapp: #39c097;
+
+  /*fonts*/
+  --poppins: "Poppins", sans-serif;
+  --zilla: "Zilla Slab", serif;
+  --libre: "Libre Baskerville", serif;
+  --tilt: "Tilt Prism", cursive;
+  --abril: "Abril Fatface", cursive;
+  --sen: "Sen", Sans-serif;
+  --Pt: "PT Serif", serif;
+  --merri: "Merriweather", serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* a-tag */
+
+a {
+  text-decoration: none;
+}
+/* -------------------------------- */
+
+/* header section */
+
+.home .home-data {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.home-data > p {
+  font-weight: 400;
+  font-family: var(--zilla);
+  font-size: 3em;
+  color: var(--dark);
+  text-align: right;
+  word-wrap: wrap;
+  padding: 10px 0px;
+}
+.home-icons {
+  width: 50%;
+  margin: auto;
+  padding: auto;
+  position: relative;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+.home-icons span {
+  margin: 6px;
+  font-size: 20px;
+}
+.wa {
+  color: var(--whatsapp);
+}
+.tw {
+  color: var(--twitter);
+}
+.in {
+  color: var(--instagram);
+}
+.li {
+  color: var(--linkedin);
+}
+.home-icons span :hover {
+  color: var(--success);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: scale(0.9);
+}
+.home-icons a {
+  text-decoration: none;
+  color: var(--white);
+}
+.home-scroll {
+  width: 50%;
+  margin: auto;
+  font-family: var(--libre);
+  padding: auto;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.home-scroll a {
+  text-decoration: none;
+  color: var(--gray);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* media queries */
+@media screen and (max-width: 500px) {
+  .home .home-data > p {
+    font-size: 2em;
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    .home-scroll {
+      padding: 10px;
+      color: var(--gray);
+      font-size: 1em;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .home-logo {
+      width: 80% !important;
+      margin: 20px;
+    }
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Animation */
+.home-img {
+  animation: fadeInLeft 3s ease-in;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadeInLeft {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    -webkit-transform: translatex(-100px);
+    -moz-transform: translatex(-100px);
+    -o-transform: translatex(-100px);
+    transform: translatex(-100px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
   }
+}
+
+.home-logo {
+  animation: fadeInRight 3s ease-in;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* home-end */
+
+/* About */
+.about {
+  margin-top: 50px;
+}
+.about-row {
+  padding: 5px 10px;
+}
+.about-icon {
+  font-size: 3.8em;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--success);
+  padding: 10px;
+}
+.about-title {
+  font-size: 3.8em;
+  font-variant: normal;
+  font-weight: bold;
+  word-spacing: nowrap;
+  color: var(--success);
+  padding-right: 20px;
+  font-family: var(--zilla);
+}
+.about-head {
+  margin-top: 50px;
+}
+.about-head h2 {
+  font-size: 1.5em;
+  font-family: var(--sen);
+  text-align: justify;
+}
+.about-scroll {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--gray);
+  font-family: var(--libre);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.about-scroll a {
+  text-decoration: none;
+  color: var(--gray);
+}
+/* media queries */
+@media screen and (max-width: 500px) {
+  .about {
+    margin-top: -10px;
+  }
+  .about-icon {
+    font-size: 2.2em;
+  }
+  .about-title {
+    font-size: 1.8em;
+    text-align: justify;
+    word-wrap: normal;
+  }
+  .about-head h2 {
+    font-size: 1.3em;
+    margin-top: 30px;
+    word-spacing: wrap;
+  }
+  .about-scroll {
+    font-size: 1em;
+  }
+}
+
+/* about-end */
+
+/* Projects */
+
+.project-icon {
+  font-size: 3.8em;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--success);
+  text-align: center;
+  padding: 10px;
+}
+.project-title {
+  font-size: 3.8em;
+  font-variant: normal;
+  font-weight: bold;
+  word-spacing: nowrap;
+  color: var(--success);
+  padding-right: 20px;
+  font-family: var(--zilla);
+}
+.project-service {
+  font-size: x-large;
+  color: var(--success);
+  font-family: var(--tilt);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .project-icon {
+    font-size: 2.2em;
+  }
+  .project-title {
+    font-size: 1.8em;
+    text-align: justify;
+    word-wrap: normal;
+  }
+}
+
+/* project-end */
+
+/* Methodology */
+
+.meth-scroll {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--gray);
+  font-family: var(--libre);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.meth-title {
+  margin-top: 30px;
+  font-size: 3.8em;
+  font-variant: normal;
+  font-weight: bold;
+  word-spacing: nowrap;
+  color: var(--success);
+  padding-right: 20px;
+  font-family: var(--zilla);
+}
+.meth-desc {
+  font-size: 3em;
+  font-weight: 500;
+  color: var(--dark);
+  font-family: var(--Pt);
+}
+.meth-para {
+  font-size: 1.3em;
+  margin-top: 30px;
+  word-spacing: normal;
+}
+.meth-scroll a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+@media screen and (max-width: 500px) {
+  .meth-scroll {
+    font-size: 1em;
+  }
+  .meth-title {
+    font-size: 1.8em;
+    text-align: justify;
+    word-wrap: normal;
+  }
+}
+/* meth-end */
+
+/* contact */
+
+.contact-row {
+  background-image: url("https://datahex.in/wp-content/uploads/2023/02/footer_background.jpg");
+  background-size: auto;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 90vh;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+.contact-details li {
+  list-style-type: none;
+  font-size: 1.3em;
+  color: var(--white);
+  margin-top: 10px;
+  font-family: var(--merri);
+  font-weight: 400;
+}
+.contact-mail {
+  list-style-type: none;
+  font-size: 1.3em;
+  color: var(--white);
+  font-family: var(--merri);
+  font-weight: 400;
+  padding: 70px 0;
+  text-align: center;
+}
+.contact-icons li {
+  list-style-type: none;
+  font-size: 25px;
+  padding: 0px 10px;
+}
+.contact-icons a {
+  text-decoration: none;
+  color: var(--white);
+}
+.contact-icons li:hover {
+  color: var(--success);
+  cursor: pointer;
+}
+.contact-copyright h3 {
+  font-size: 1.3em;
+  color: var(--white);
+}
+/* media queries */
+@media screen and (max-width: 500px) {
+  .contact-copyright h3 {
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+}
+
+/* page-top */
+.page-top a {
+  position: fixed;
+  top: 60%;
+  font-size: 30px;
+  color: black;
 }
